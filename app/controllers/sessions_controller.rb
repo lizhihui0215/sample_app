@@ -3,15 +3,13 @@ class SessionsController < ApplicationController
   end
 
   def create
-    puts "param is #{params[:session]}"
     user = User.find_by(email: params[:session][:email].downcase)
     if user && user.authenticate(params[:session][:password])
       # Log the user in and redirect to the user's show page.
       log_in user
       # debugger
-      puts "param is #{params[:session]}"
       params[:session][:remember_me] == '1' ? remember(user) : forget(user)
-      redirect_to user
+      redirect_back_or user
     else
       # Create an error message.
       flash.now[:danger] = "Invalid email/password combination"
