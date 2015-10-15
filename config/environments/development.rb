@@ -48,19 +48,16 @@ Rails.application.configure do
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
 
-
-
-
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.delivery_method = :smtp
   host = 'http://52.11.151.111:9080/'
   config.action_mailer.default_url_options = { host: host }
   ActionMailer::Base.smtp_settings = {
-    :address        => 'smtp.sendgrid.net',
+    :address        => 'smtp.live.com',
     :port           => '587',
     :authentication => :plain,
-    :user_name      => ENV['lizhihui0215'],
-    :password       => ENV['dsn4cgwy'],
+    :user_name      => 'lizhihui0215@hotmail.com',
+    :password       => 'dsn4cgwy',
     :domain         => 'http://52.11.151.111/',
     :enable_starttls_auto => true
   }
