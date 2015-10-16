@@ -50,7 +50,7 @@ Rails.application.configure do
 
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.delivery_method = :smtp
-  host = 'http://52.11.151.111:9080/'
+  host = 'localhost:3000'
   config.action_mailer.default_url_options = { host: host }
   ActionMailer::Base.smtp_settings = {
     :address        => 'smtp.live.com',
@@ -58,7 +58,7 @@ Rails.application.configure do
     :authentication => :plain,
     :user_name      => 'lizhihui0215@hotmail.com',
     :password       => 'dsn4cgwy',
-    :domain         => 'http://52.11.151.111/',
+    :domain         => 'localhost:3000',
     :enable_starttls_auto => true
   }
 end
