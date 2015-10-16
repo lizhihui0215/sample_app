@@ -12,3 +12,6 @@
 !/log/.keep
 /tmp
 /.idea
+
+# Ignore uploaded test images.
+/public/uploads
